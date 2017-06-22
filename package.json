@@ -1,0 +1,25 @@
+{
+  "name": "nice-ui",
+  "version": "0.0.1",
+  "description": "simple and nice ui components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangxiaojie/nice-ui.git"
+  },
+  "keywords": [
+    "nice-ui",
+    "react",
+    "react-components",
+    "javascript"
+  ],
+  "author": "XiaoJie Liang <liangxiaojie0@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liangxiaojie/nice-ui/issues"
+  },
+  "homepage": "https://github.com/liangxiaojie/nice-ui#readme"
+}
