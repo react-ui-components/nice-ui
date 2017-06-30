@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import buttonStyles from './Button.styled';
 
 class Button extends Component {
   static propTypes = {
@@ -36,3 +39,5 @@ class Button extends Component {
     return React.createElement(href ? 'a' : containerElement, buttonProps, children);
   }
 }
+
+export default styled(Button)`${buttonStyles}`;
