@@ -1,3 +1,5 @@
-import './Button';
+import * as colors from './colors';
 
-export * from './index';
+export {colors};
+
+export {default as Button} from './Button';
