@@ -1,9 +1,9 @@
-import { css } from 'styled-components';
+import {css} from 'styled-components';
 
-const buttonStyles = css`
+const buttonStyles = css `
   display: inline-block;
   box-sizing: border-box;
-  width: 100%;
+  min-width: 80px;
   text-align: center;
   margin: 4em 0;
   padding: 0.25em 2em;
