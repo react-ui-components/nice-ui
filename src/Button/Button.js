@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-import buttonStyles from './Button.styled';
+// @flow
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import buttonStyles from './Button.styled'
 
 class Button extends Component {
   static propTypes = {
@@ -10,12 +10,12 @@ class Button extends Component {
     children: PropTypes.node,
     type: PropTypes.string,
     disabled: PropTypes.bool,
-    href: PropTypes.string
+    href: PropTypes.string,
   };
 
   static defaultProps = {
     containerElement: 'button',
-    type: 'button'
+    type: 'button',
   };
 
   render() {
@@ -26,18 +26,20 @@ class Button extends Component {
       disabled,
       href,
       ...other
-    } = this.props;
+    } = this.props
 
     const buttonProps = {
-      ref: (node) => this.button = node,
-      type: type,
-      disabled: disabled,
-      href: href,
-      ...other
-    };
+      ref: node => {
+        this.button = node
+      },
+      type,
+      disabled,
+      href,
+      ...other,
+    }
 
-    return React.createElement(href ? 'a' : containerElement, buttonProps, children);
+    return React.createElement(href ? 'a' : containerElement, buttonProps, children)
   }
 }
 
-export default styled(Button)`${buttonStyles}`;
+export default styled(Button)`${buttonStyles}`

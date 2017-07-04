@@ -1,3 +1,4 @@
+// @flow
 const cyan = [
   '#ebf8f9',
   '#cfedf0',
@@ -8,7 +9,7 @@ const cyan = [
   '#008997',
   '#00707f',
   '#005667',
-  '#003c4e'
-];
+  '#003c4e',
+]
 
-export default cyan;
+export default cyan

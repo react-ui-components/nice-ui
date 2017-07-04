@@ -1,3 +1,4 @@
+// @flow
 const orange = [
   '#fef3eb',
   '#fde3cf',
@@ -8,7 +9,7 @@ const orange = [
   '#d75000',
   '#b93600',
   '#991b00',
-  '#7a0000'
-];
+  '#7a0000',
+]
 
-export default orange;
+export default orange

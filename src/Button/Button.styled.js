@@ -1,6 +1,10 @@
-import {css} from 'styled-components';
+// @flow
+import { css } from 'styled-components'
 
 const buttonStyles = css `
+  color: ${props => props.theme.primary[0]};
+  background-color: ${props => props.theme.primary[5]};
+  border: 2px solid ${props => props.theme.primary[5]};
   display: inline-block;
   box-sizing: border-box;
   min-width: 80px;
@@ -16,14 +20,13 @@ const buttonStyles = css `
   outline: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 16px;
-  border: 2px solid #41addd;
-  color: #41addd;
+  font-size: 14px;
 
   &:active {
-    background: #41addd;
-    color: #fff;
+    background-color: ${props => props.theme.primary[6]};
+    border-color: ${props => props.theme.primary[6]};
+    color: ${props => props.theme.primary[0]};
   }
-`;
+`
 
-export default buttonStyles;
+export default buttonStyles

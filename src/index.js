@@ -1,5 +1,6 @@
-import * as colors from './colors';
+// @flow
+import * as colors from './colors'
 
-export {colors};
+export { colors }
 
-export {default as Button} from './Button';
+export { default as Button } from './Button'

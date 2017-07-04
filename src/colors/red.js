@@ -1,3 +1,4 @@
+// @flow
 const red = [
   '#fef0ef',
   '#fcdbd9',
@@ -8,7 +9,7 @@ const red = [
   '#d73435',
   '#bd2636',
   '#a31837',
-  '#880a38'
-];
+  '#880a38',
+]
 
-export default red;
+export default red
