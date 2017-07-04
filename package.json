@@ -11,7 +11,7 @@
     "test:jest": "jest",
     "test:watch": "npm run test:jest -- --watch",
     "test:size": "bundlesize",
-    "lint": "eslint src",
+    "lint": "eslint src --cache",
     "lint-staged": "lint-staged",
     "prepublish": "npm run build",
     "dev": "webpack-dev-server --content-base ./dist --progress --colors --hot"
@@ -71,7 +71,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "eslint --cache --fix",
       "git add"
     ]
   },

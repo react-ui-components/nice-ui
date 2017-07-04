@@ -1,8 +1,11 @@
 # Node Files
 node_modules
 
-# logs
+# Logs
 *.log
+
+# Cache
+.eslintcache
 
 # Project
 build
