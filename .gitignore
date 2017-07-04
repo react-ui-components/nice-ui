@@ -1,6 +1,10 @@
 # Node Files
 node_modules
 
+# logs
+*.log
+
 # Project
 build
 dist
+lib
