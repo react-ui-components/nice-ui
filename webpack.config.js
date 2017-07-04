@@ -1,24 +1,78 @@
-var path = require('path')
-htmlWebpackPlugin = require('html-webpack-plugin');
+// @flow
+const path = require('path')
+const webpack = require('webpack')
 
-module.exports = {
-  entry: './example/entry',
+const LIBRARY_NAME = 'nice-ui'
+
+const baseConfig = {
+  entry: {
+    'nice-ui': path.join(__dirname, './src/index.js'),
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/assets/'
+    path: path.join(__dirname, './dist'),
+    library: LIBRARY_NAME,
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
   },
+  externals: [
+    'react-transition-group/TransitionGroup',
+    {
+      react: {
+        root: 'React',
+        commonjs2: './react',
+        commonjs: ['./react'],
+        amd: 'react',
+      },
+    },
+    {
+      'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: './react-dom',
+        commonjs: ['./react-dom'],
+        amd: 'react-dom',
+      },
+    },
+  ],
   module: {
-    rules: [
+    loaders: [
       {
-        test: /\.jsx?$/,
-        include: [
-          path.resolve(__dirname, 'src'),
-          path.resolve(__dirname, 'example')
-        ],
-        loader: 'babel-loader'
-      }
-    ]
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /(node_modules)/,
+        query: {
+          cacheDirectory: true,
+        },
+      },
+    ],
   },
-  plugins: [new htmlWebpackPlugin({template: 'example/index.html'})]
+  plugins: [],
 }
+
+let config
+
+if (process.env.NODE_ENV === 'production') {
+  config = Object.assign({}, baseConfig, {
+    output: Object.assign({}, baseConfig.output, {
+      filename: `${LIBRARY_NAME}.min.js`,
+    }),
+    plugins: baseConfig.plugins.concat([
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          screw_ie8: true,
+        },
+      }),
+    ]),
+  })
+} else {
+  config = Object.assign({}, baseConfig, {
+    output: Object.assign({}, baseConfig.output, {
+      filename: `${LIBRARY_NAME}.js`,
+    }),
+  })
+}
+
+module.exports = config
