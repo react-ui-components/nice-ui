@@ -1,4 +1,7 @@
-*.test.js
+/.git
 
-lib/
-dist/
+node_modules
+.next
+
+lib
+dist
