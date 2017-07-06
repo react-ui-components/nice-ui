@@ -1,0 +1,27 @@
+{
+  "name": "nice-ui-docs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Nice-UI Documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangxiaojie/nice-ui.git"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "cross-env": "^5.0.1",
+    "express": "^4.15.3",
+    "next": "^2.4.6",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-markdown": "^2.5.0"
+  },
+  "devDependencies": {
+    "raw-loader": "^0.5.1"
+  }
+}
