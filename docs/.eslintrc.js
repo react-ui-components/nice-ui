@@ -3,7 +3,8 @@ const path = require('path')
 module.exports = {
   extends: '../.eslintrc',
   rules: {
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'react/react-in-jsx-scope': 0,
   },
   settings: {
     'import/resolver': {
