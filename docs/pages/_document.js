@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
           <title>Nice-UI</title>
           <meta name="description" content="simple and nice ui components" />
 
+          {/* eslint react/no-danger: 0 */}
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
           {styleTags}
         </Head>
